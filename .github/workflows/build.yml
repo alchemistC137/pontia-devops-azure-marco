@@ -39,10 +39,6 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      
-      - name: Run MLflow project
-        run: |
-          mlflow run . -P alpha=0.5 -P l1_ratio=0.5 -P max_iter=100 --experiment-name $EXPERIMENT_NAME --run-name $RUN_NAME
 
       - name: Download dataset
         run: |
